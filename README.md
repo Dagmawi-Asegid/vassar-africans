@@ -1,10 +1,11 @@
-# 🌍 Vassar Africans Web Application
+#  Vassar Africans Web Application
 
-> The official web platform for the Vassar College African Students Association. 
+> The web platform for the Vassar College African Students Association.
+> This project is still going on.
 
 A modern, responsive web application designed to foster community, celebrate culture, and provide essential resources for African students at Vassar College. This platform features a stunning landing page, secure student authentication, and an internal chat/dashboard system.
 
-## ✨ Features
+##  Features
 
 - **Dynamic Landing Page:** Beautifully animated UI featuring the organization's pillars, upcoming events, and executive board.
 - **Student Authentication:** Secure sign-up and login flow (powered by Supabase) restricted to Vassar students.
@@ -12,7 +13,7 @@ A modern, responsive web application designed to foster community, celebrate cul
 - **Internal Dashboard & Chat:** A dedicated space for authenticated students to connect and communicate.
 - **Smooth Animations:** "Apple-like" scroll and entry animations using Framer Motion.
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Library:** [React](https://react.dev/)
@@ -21,7 +22,7 @@ A modern, responsive web application designed to foster community, celebrate cul
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Database & Auth:** [Supabase](https://supabase.com/)
 
-## 🛠️ Getting Started
+##  Getting Started
 
 To get a local copy up and running on your machine, follow these simple steps:
 
@@ -56,13 +57,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - `/app/lib` - Utility functions and Supabase client configuration.
 - `/public` - Static assets, images, and icons.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome! 
 
-## 👨‍💻 Author
+## Author
 
-**Dagmawi Asegid**
+**  Dagmawi Asegid  **
 - GitHub: [@Dagmawi-Asegid](https://github.com/Dagmawi-Asegid)
 - Project Link: [https://github.com/Dagmawi-Asegid/vassar-africans](https://github.com/Dagmawi-Asegid/vassar-africans)
 
