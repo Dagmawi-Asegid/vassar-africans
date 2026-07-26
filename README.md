@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Vassar Africans Web Application
 
-## Getting Started
+> The official web platform for the Vassar College African Students Association. 
 
-First, run the development server:
+A modern, responsive web application designed to foster community, celebrate culture, and provide essential resources for African students at Vassar College. This platform features a stunning landing page, secure student authentication, and an internal chat/dashboard system.
 
+## ✨ Features
+
+- **Dynamic Landing Page:** Beautifully animated UI featuring the organization's pillars, upcoming events, and executive board.
+- **Student Authentication:** Secure sign-up and login flow (powered by Supabase) restricted to Vassar students.
+- **Resource Hub:** Centralized guides for navigating international life (SSN, CPT/OPT, Housing, Insurance).
+- **Internal Dashboard & Chat:** A dedicated space for authenticated students to connect and communicate.
+- **Smooth Animations:** "Apple-like" scroll and entry animations using Framer Motion.
+
+## 🚀 Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Library:** [React](https://react.dev/)
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Database & Auth:** [Supabase](https://supabase.com/)
+
+## 🛠️ Getting Started
+
+To get a local copy up and running on your machine, follow these simple steps:
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/Dagmawi-Asegid/vassar-africans.git](https://github.com/Dagmawi-Asegid/vassar-africans.git)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+Navigate into the project directory and install the required npm packages:
+```bash
+cd vassar-africans
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Set up Environment Variables
+Create a `.env.local` file in the root directory and add your Supabase connection keys:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the development server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `/app` - Contains all Next.js routes (`/login`, `/signup`, `/chat`) and the main page.
+- `/app/lib` - Utility functions and Supabase client configuration.
+- `/public` - Static assets, images, and icons.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions, issues, and feature requests are welcome! 
 
-## Deploy on Vercel
+## 👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Dagmawi Asegid**
+- GitHub: [@Dagmawi-Asegid](https://github.com/Dagmawi-Asegid)
+- Project Link: [https://github.com/Dagmawi-Asegid/vassar-africans](https://github.com/Dagmawi-Asegid/vassar-africans)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built for the Vassar African Students Association.*
