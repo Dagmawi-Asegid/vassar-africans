@@ -1,7 +1,7 @@
 #  Vassar Africans Web Application
 
 > The web platform for the Vassar College African Students Association.
-> This project is still going on.
+> This project is still going on. I will try to transfer this project to an application.
 
 A modern, responsive web application designed to foster community, celebrate culture, and provide essential resources for African students at Vassar College. This platform features a stunning landing page, secure student authentication, and an internal chat/dashboard system.
 
