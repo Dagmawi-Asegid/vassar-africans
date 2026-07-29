@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Professional "Apple-like" animation curve (Ease Out Quint)
+// Professional "Apple-like" animation curve
 const smoothCurve = [0.22, 1, 0.36, 1];
 
 // Executive Board Members Data
@@ -60,93 +60,201 @@ const boardMembers = [
   },
 ];
 
-// Comprehensive Guides Data
+// HIGHLY VISUAL & INTERACTIVE GUIDES DATA
 const resourcesData = [
   {
     id: "ssn",
-    icon: "📄",
+    icon: "🇺🇸",
     title: "SSN & Work Authorization",
-    shortDesc: "Your complete guide to applying for a Social Security Number for on-campus employment.",
+    shortDesc: "The 5-step visual blueprint to legally working on campus and securing your Social Security Number.",
+    image: "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=2070&auto=format&fit=crop",
     content: (
-      <div className="space-y-4 text-gray-700">
-        <p className="font-medium text-gray-950">As an international F-1 student, you cannot get an SSN just for identification. You must have a job offer first.</p>
-        <h4 className="font-bold text-gray-950 mt-4">Step-by-Step Process:</h4>
-        <ol className="list-decimal pl-5 space-y-2">
-          <li><strong>Secure an On-Campus Job:</strong> Apply for jobs via Vassar's Student Employment office (JobX). You must have an official job offer.</li>
-          <li><strong>Get an Employer Letter:</strong> Ask your new supervisor to write an official letter confirming your employment.</li>
-          <li><strong>Request an OIS Support Letter:</strong> Submit your employer letter to Vassar's Office of International Services (OIS). They will issue a specialized SSN support letter.</li>
-          <li><strong>Fill out Form SS-5:</strong> Download and complete the <a href="https://www.ssa.gov/forms/ss-5.pdf" target="_blank" rel="noopener noreferrer" className="text-yellow-600 underline">Social Security Application Form (SS-5)</a>.</li>
-          <li><strong>Visit the local SSA Office:</strong> Take a bus or taxi to the Poughkeepsie Social Security Office (332 Main St). <strong>Bring:</strong> Your Passport, F-1 Visa, Most recent I-94 form, I-20, Employer Letter, OIS Letter, and Form SS-5.</li>
-        </ol>
-        <p className="text-sm mt-4 bg-yellow-50 p-3 rounded-lg border border-yellow-200">
-          <strong>Pro-tip:</strong> It usually takes 2-4 weeks for your card to arrive in the mail. You can generally start working before it arrives, provided you have a receipt from the SSA office.
-        </p>
+      <div className="space-y-8">
+        <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-2xl flex gap-4 items-start shadow-sm">
+          <span className="text-2xl">🛑</span>
+          <div>
+            <h4 className="text-red-800 font-bold text-lg">Crucial Rule for F-1 Students</h4>
+            <p className="text-red-700/90 text-sm mt-1">You <strong>cannot</strong> apply for an SSN just to have one or to build credit. You MUST have an official on-campus job offer first. If you apply without one, you will be rejected.</p>
+          </div>
+        </div>
+
+        <div className="relative border-l-2 border-gray-100 ml-4 space-y-8 pb-4">
+          {/* Step 1 */}
+          <div className="relative pl-8">
+            <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">1</div>
+            <h4 className="font-bold text-gray-950 text-xl">Get Hired On-Campus</h4>
+            <p className="text-sm text-gray-600 mt-1 mb-3">Find a job through Vassar's Student Employment portal (JobX). Apply for positions at the library, dining, or as a research assistant.</p>
+            <a href="https://vassar.studentemployment.ngwebsolutions.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-yellow-500 text-gray-950 text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-yellow-400 transition shadow-sm">
+              Open Vassar JobX Portal <span className="text-lg">↗</span>
+            </a>
+          </div>
+
+          {/* Step 2 */}
+          <div className="relative pl-8">
+            <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">2</div>
+            <h4 className="font-bold text-gray-950 text-xl">Supervisor Letter</h4>
+            <p className="text-sm text-gray-600 mt-1">Once hired, ask your manager to fill out the official "Employer Letter" on Vassar letterhead proving you actually have a job starting soon.</p>
+          </div>
+
+          {/* Step 3 */}
+          <div className="relative pl-8">
+            <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">3</div>
+            <h4 className="font-bold text-gray-950 text-xl">OIS Support Letter</h4>
+            <p className="text-sm text-gray-600 mt-1 mb-3">Bring your supervisor's letter to the Office of International Services. They will verify your visa status and print a support letter for the government.</p>
+            <a href="https://offices.vassar.edu/international-services/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gray-100 text-gray-800 text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-gray-200 transition">
+              Contact Vassar OIS <span className="text-lg">↗</span>
+            </a>
+          </div>
+
+          {/* Step 4 */}
+          <div className="relative pl-8">
+            <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">4</div>
+            <h4 className="font-bold text-gray-950 text-xl">Government Form (SS-5)</h4>
+            <p className="text-sm text-gray-600 mt-1 mb-3">Download, print, and fill out the official application for a Social Security Card in blue or black ink.</p>
+            <a href="https://www.ssa.gov/forms/ss-5.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition shadow-sm">
+              📄 Download Form SS-5 (PDF)
+            </a>
+          </div>
+
+          {/* Step 5 */}
+          <div className="relative pl-8">
+            <div className="absolute -left-[17px] top-1 bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">5</div>
+            <h4 className="font-bold text-gray-950 text-xl">Visit the Poughkeepsie SSA</h4>
+            <p className="text-sm text-gray-600 mt-1 mb-3">Take all your physical documents (Passport, Visa, I-20, I-94, Employer Letter, OIS Letter, SS-5) downtown to apply in person.</p>
+            <div className="bg-gray-50 p-4 rounded-xl border border-gray-200">
+              <p className="font-bold text-gray-900 flex items-center gap-2 mb-2">📍 Social Security Administration</p>
+              <p className="text-sm text-gray-600 mb-3">332 Main St, Poughkeepsie, NY 12601</p>
+              <a href="https://goo.gl/maps/PoughkeepsieSSA" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm font-bold">Open in Google Maps &rarr;</a>
+            </div>
+          </div>
+        </div>
       </div>
     )
   },
   {
     id: "cpt-opt",
-    icon: "⚖️",
-    title: "Understanding CPT & OPT",
-    shortDesc: "Navigate the complex rules and legal regulations for off-campus internships and post-grad jobs.",
+    icon: "💼",
+    title: "Off-Campus Work (CPT vs OPT)",
+    shortDesc: "Don't get deported for an illegal internship. Learn exactly how to authorize off-campus jobs.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop",
     content: (
-      <div className="space-y-4 text-gray-700">
-        <p className="font-medium text-gray-950">To work off-campus in the US, you need specific work authorization tied to your degree.</p>
+      <div className="space-y-8">
+        <p className="text-gray-700 bg-gray-50 p-4 rounded-xl text-sm border border-gray-100">
+          <strong>Visa Warning:</strong> Working off-campus without explicit authorization on your I-20 will result in immediate visa termination. You have two legal pathways:
+        </p>
         
-        <h4 className="font-bold text-gray-950 mt-4">1. CPT (Curricular Practical Training)</h4>
-        <p className="text-sm">Used for internships <strong>before</strong> graduation.</p>
-        <ul className="list-disc pl-5 space-y-1 text-sm">
-          <li>You must have been enrolled full-time for at least one academic year.</li>
-          <li>The internship <strong>must</strong> be directly related to your declared major.</li>
-          <li><strong>Steps:</strong> Get an internship offer &rarr; Apply for CPT through Vassar OIS &rarr; Receive a new I-20 with CPT authorization on page 2 &rarr; Start working.</li>
-          <li><em>Cost: Free. Processing time: Usually 1-2 weeks by OIS.</em></li>
-        </ul>
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* CPT Card */}
+          <div className="bg-white rounded-2xl border-2 border-yellow-200 overflow-hidden shadow-sm hover:shadow-md transition">
+            <div className="bg-yellow-100 px-5 py-3 border-b border-yellow-200 flex justify-between items-center">
+              <h4 className="font-bold text-yellow-900 text-lg">CPT</h4>
+              <span className="bg-yellow-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Before Grad</span>
+            </div>
+            <div className="p-5 space-y-4">
+              <p className="text-sm text-gray-600">Curricular Practical Training. Used for summer internships while you are still studying.</p>
+              <ul className="text-sm space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">✅ <strong>Rule:</strong> Job MUST relate to declared major.</li>
+                <li className="flex items-start gap-2">💸 <strong>Cost:</strong> Free</li>
+                <li className="flex items-start gap-2">⏱ <strong>Time:</strong> 1-2 weeks</li>
+                <li className="flex items-start gap-2">🏢 <strong>Authority:</strong> Vassar OIS (No Gov filing)</li>
+              </ul>
+              <a href="https://offices.vassar.edu/international-services/" target="_blank" rel="noopener noreferrer" className="block text-center w-full bg-gray-100 text-gray-800 text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-gray-200 transition">
+                Vassar CPT Guidelines &rarr;
+              </a>
+            </div>
+          </div>
 
-        <h4 className="font-bold text-gray-950 mt-4">2. OPT (Optional Practical Training)</h4>
-        <p className="text-sm">Used for employment <strong>after</strong> graduation.</p>
-        <ul className="list-disc pl-5 space-y-1 text-sm">
-          <li>Allows you to work anywhere in the US for 12 months (up to 36 months for STEM majors like Computer Science).</li>
-          <li>You do <strong>not</strong> need a job offer to apply for OPT.</li>
-          <li><strong>Steps:</strong> Apply to OIS for an OPT recommendation I-20 &rarr; Submit Form I-765 online to USCIS &rarr; Wait for your EAD (Employment Authorization Document) Card.</li>
-          <li><strong>Timeline:</strong> Apply up to 90 days before graduation. USCIS processing takes 2–4 months.</li>
-        </ul>
-        <a href="https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students" target="_blank" rel="noopener noreferrer" className="text-yellow-600 font-bold underline text-sm block mt-2">Read Official USCIS OPT Guide &rarr;</a>
+          {/* OPT Card */}
+          <div className="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-sm hover:shadow-md transition">
+            <div className="bg-blue-100 px-5 py-3 border-b border-blue-200 flex justify-between items-center">
+              <h4 className="font-bold text-blue-900 text-lg">OPT</h4>
+              <span className="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">After Grad</span>
+            </div>
+            <div className="p-5 space-y-4">
+              <p className="text-sm text-gray-600">Optional Practical Training. Gives you 1 year (or 3 for STEM) to work anywhere in the US.</p>
+              <ul className="text-sm space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">✅ <strong>Rule:</strong> No job offer needed to apply!</li>
+                <li className="flex items-start gap-2">💸 <strong>Cost:</strong> ~$410 Gov Fee</li>
+                <li className="flex items-start gap-2">⏱ <strong>Time:</strong> 2-4 Months (Apply early!)</li>
+                <li className="flex items-start gap-2">🏢 <strong>Authority:</strong> USCIS (Gov filing)</li>
+              </ul>
+              <a href="https://www.uscis.gov/i-765" target="_blank" rel="noopener noreferrer" className="block text-center w-full bg-blue-600 text-white text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-blue-700 transition">
+                File Form I-765 at USCIS &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     )
   },
   {
-    id: "housing",
-    icon: "🏢",
-    title: "Housing, Banking and SIM",
-    shortDesc: "Tips for finding off-campus housing, setting up a US bank account and getting a SIM card.",
+    id: "setup",
+    icon: "🏠",
+    title: "Life Setup (Bank, Phone, Housing)",
+    shortDesc: "Skip the heavy research. Use these vetted services to establish your digital and physical life in the US.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop",
     content: (
-      <div className="space-y-6 text-gray-700">
-        <div>
-          <h4 className="font-bold text-gray-950 border-b pb-1 mb-2">📱 Getting a US Phone Number</h4>
-          <p className="text-sm mb-2">You need an unlocked phone from your home country. eSIMs are the easiest option.</p>
-          <ul className="list-disc pl-5 text-sm space-y-1">
-            <li><strong>Mint Mobile:</strong> Highly recommended. ~$15/month. Order online, instantly activate via eSIM.</li>
-            <li><strong>AT&T / T-Mobile:</strong> More expensive but have physical stores in Poughkeepsie if you need in-person help.</li>
-          </ul>
+      <div className="space-y-8">
+        {/* Phone Network */}
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-3xl bg-gray-50 p-2 rounded-xl">📱</span>
+            <div>
+              <h4 className="font-bold text-gray-950 text-xl">US Phone Number (eSIM)</h4>
+              <p className="text-sm text-gray-500">Don't buy $60/month AT&T plans. Use these digital MVNOs.</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <a href="https://www.mintmobile.com/" target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between p-4 rounded-xl border border-green-200 bg-green-50/30 hover:bg-green-50 transition">
+              <div>
+                <strong className="text-green-700 text-lg block mb-1">Mint Mobile</strong>
+                <p className="text-xs text-gray-600">The #1 choice for students. Plans start at $15/mo. You can activate it instantly via eSIM right now on Wi-Fi.</p>
+              </div>
+              <span className="mt-4 text-green-700 font-bold text-sm group-hover:translate-x-1 transition-transform">Get Mint &rarr;</span>
+            </a>
+            <a href="https://www.usmobile.com/" target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between p-4 rounded-xl border border-indigo-200 bg-indigo-50/30 hover:bg-indigo-50 transition">
+              <div>
+                <strong className="text-indigo-700 text-lg block mb-1">US Mobile</strong>
+                <p className="text-xs text-gray-600">Highly customizable data pools. Excellent if you need to call your home country frequently.</p>
+              </div>
+              <span className="mt-4 text-indigo-700 font-bold text-sm group-hover:translate-x-1 transition-transform">Get US Mobile &rarr;</span>
+            </a>
+          </div>
         </div>
 
-        <div>
-          <h4 className="font-bold text-gray-950 border-b pb-1 mb-2">🏦 Opening a Bank Account</h4>
-          <p className="text-sm mb-2">You do not need an SSN to open a basic student checking account.</p>
-          <ol className="list-decimal pl-5 text-sm space-y-1">
-            <li>Go to a branch (Chase Bank or Bank of America are near Vassar).</li>
-            <li><strong>Bring:</strong> Passport, I-20 form, Vassar Student ID, and a proof of address (a letter from Vassar residential life).</li>
-            <li>Ask to open a "College Checking Account" to avoid monthly maintenance fees.</li>
-          </ol>
+        {/* Banking */}
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-3xl bg-gray-50 p-2 rounded-xl">🏦</span>
+            <div>
+              <h4 className="font-bold text-gray-950 text-xl">US Bank Account</h4>
+              <p className="text-sm text-gray-500">You do NOT need an SSN. Bring your Passport, I-20, and Vassar ID to a physical branch.</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a href="https://locator.chase.com/ny/poughkeepsie" target="_blank" rel="noopener noreferrer" className="bg-[#117aca] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#0d5d9a] transition flex items-center gap-2">
+              Find Chase Bank (Poughkeepsie)
+            </a>
+            <a href="https://locators.bankofamerica.com/ny/poughkeepsie" target="_blank" rel="noopener noreferrer" className="bg-[#e31837] text-white text-sm font-bold px-5 py-3 rounded-xl hover:bg-[#b0132b] transition flex items-center gap-2">
+              Find Bank of America
+            </a>
+          </div>
         </div>
 
-        <div>
-          <h4 className="font-bold text-gray-950 border-b pb-1 mb-2">🏠 Off-Campus Housing</h4>
-          <p className="text-sm mb-2">If you move off-campus (usually junior/senior year):</p>
-          <ul className="list-disc pl-5 text-sm space-y-1">
-            <li>Landlords usually require a US credit score. Since you might not have one, you will likely need to show your I-20 financial proof, a bank statement, or have a guarantor.</li>
-            <li>Use <strong>Zillow</strong>, <strong>Apartments.com</strong>, or Vassar Facebook groups to find leases.</li>
-          </ul>
+        {/* Housing */}
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-3xl bg-gray-50 p-2 rounded-xl">🔑</span>
+            <div>
+              <h4 className="font-bold text-gray-950 text-xl">Off-Campus Housing</h4>
+              <p className="text-sm text-gray-500">No US Credit Score? Use a "Guarantor" service to secure an apartment.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <a href="https://www.zillow.com/poughkeepsie-ny/rentals/" target="_blank" rel="noopener noreferrer" className="bg-gray-50 border border-gray-200 text-center text-sm font-bold px-3 py-3 rounded-xl hover:bg-gray-100 transition">Zillow</a>
+            <a href="https://www.apartments.com/poughkeepsie-ny/" target="_blank" rel="noopener noreferrer" className="bg-gray-50 border border-gray-200 text-center text-sm font-bold px-3 py-3 rounded-xl hover:bg-gray-100 transition">Apts.com</a>
+            <a href="https://www.theguarantors.com/" target="_blank" rel="noopener noreferrer" className="bg-gray-950 text-white text-center text-sm font-bold px-3 py-3 rounded-xl hover:bg-gray-800 transition md:col-span-2">The Guarantors (No Credit)</a>
+          </div>
         </div>
       </div>
     )
@@ -154,39 +262,55 @@ const resourcesData = [
   {
     id: "health",
     icon: "🏥",
-    title: "Health Insurance",
-    shortDesc: "How to understand and use Vassar's international student health insurance.",
+    title: "Healthcare & Insurance",
+    shortDesc: "US healthcare is famously expensive. Learn how to use your Vassar insurance correctly.",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop",
     content: (
-      <div className="space-y-4 text-gray-700">
-        <p className="font-medium text-gray-950">Healthcare in the US is extremely expensive without insurance. Vassar requires all international students to have coverage.</p>
-        
-        <h4 className="font-bold text-gray-950 mt-4">How it works:</h4>
-        <ul className="list-disc pl-5 space-y-2 text-sm">
-          <li><strong>Automatic Enrollment:</strong> As an F-1 student, you are automatically enrolled in the Vassar Student Health Insurance Plan (usually managed by Gallagher Student Health). It is billed directly to your student account.</li>
-          <li><strong>On-Campus Care:</strong> For most basic illnesses, testing, or prescriptions, go to <strong>Baldwin Medical Center</strong> on campus. It is often free or very low cost for students.</li>
-          <li><strong>Off-Campus Care (In-Network):</strong> If you need a specialist off-campus, you must make sure the doctor is "In-Network" with your insurance (often UnitedHealthcare Choice Plus). If you go "Out-of-Network", you will pay much more.</li>
-        </ul>
+      <div className="space-y-6">
+        {/* Step 1 */}
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-yellow-300 transition group">
+          <h4 className="font-bold text-gray-950 text-xl mb-2 flex items-center gap-2">
+            <span className="bg-gray-100 text-gray-500 text-sm px-2 py-1 rounded-md">Step 1</span> On-Campus First
+          </h4>
+          <p className="text-sm text-gray-600 mb-4">For fevers, basic injuries, or STD testing, ALWAYS go to Baldwin Health Center first. It is included in tuition and requires no complex billing.</p>
+          <a href="https://healthservice.vassar.edu/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gray-100 text-gray-800 text-sm font-bold px-4 py-2 rounded-xl group-hover:bg-yellow-100 transition">
+            Vassar Baldwin Health Center &rarr;
+          </a>
+        </div>
 
-        <h4 className="font-bold text-gray-950 mt-4">Action Items:</h4>
-        <ol className="list-decimal pl-5 space-y-1 text-sm mb-4">
-          <li>Create an account on the Gallagher Student Health website.</li>
-          <li>Download your Digital ID Card to your Apple Wallet / Google Pay. You MUST show this card at off-campus pharmacies (like CVS/Walgreens) and hospitals.</li>
-        </ol>
-        
-        <a href="https://www.gallagherstudent.com/" target="_blank" rel="noopener noreferrer" className="text-yellow-600 font-bold underline text-sm mt-2">Visit Gallagher Student Health Portal &rarr;</a>
+        {/* Step 2 */}
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-300 transition group">
+          <h4 className="font-bold text-gray-950 text-xl mb-2 flex items-center gap-2">
+            <span className="bg-gray-100 text-gray-500 text-sm px-2 py-1 rounded-md">Step 2</span> Get Your Insurance Card
+          </h4>
+          <p className="text-sm text-gray-600 mb-4">To get prescriptions at CVS or see a specialist, you need your digital Insurance Card. Vassar uses Gallagher Student Health (usually underwritten by UnitedHealthcare).</p>
+          <a href="https://www.gallagherstudent.com/vassar" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-xl hover:bg-blue-700 transition shadow-sm">
+            Log in to Gallagher Health &rarr;
+          </a>
+        </div>
+
+        {/* Step 3 */}
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-yellow-300 transition group">
+          <h4 className="font-bold text-gray-950 text-xl mb-2 flex items-center gap-2">
+            <span className="bg-gray-100 text-gray-500 text-sm px-2 py-1 rounded-md">Step 3</span> Find "In-Network" Doctors
+          </h4>
+          <p className="text-sm text-gray-600 mb-4">Never go to a random clinic without checking if they are "In-Network." Use Zocdoc to filter doctors in Poughkeepsie who accept your exact UnitedHealthcare Student plan.</p>
+          <a href="https://www.zocdoc.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#FFDD00] text-gray-950 text-sm font-bold px-4 py-2 rounded-xl hover:bg-[#E6C700] transition">
+            Find Doctors on Zocdoc &rarr;
+          </a>
+        </div>
       </div>
     )
   }
 ];
 
 export default function Home() {
-  // State for the interactive guide modal
   const [activeGuide, setActiveGuide] = useState<null | typeof resourcesData[0]>(null);
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* 1. Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <main className="min-h-screen bg-gray-50/50">
+      {/* 1. Navigation Bar (From original version, but smoothed out) */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
             <img 
@@ -210,7 +334,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 2. Golden African Background Hero Section */}
+      {/* 2. Golden African Background Hero Section (From original version) */}
       <header className="relative pt-32 pb-24 md:pt-48 md:pb-36 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -250,12 +374,12 @@ export default function Home() {
         </motion.div>
       </header>
 
-      {/* 3. About Section */}
+      {/* 3. About Section (From original version) */}
       <section id="about" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: smoothCurve }}
           className="text-center mb-16"
         >
@@ -273,7 +397,7 @@ export default function Home() {
               key={pillar.title} 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, delay: index * 0.15, ease: smoothCurve }}
               className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)] transition hover:border-yellow-200"
             >
@@ -285,7 +409,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Events Spotlight */}
+      {/* 4. Events Spotlight (From original version) */}
       <section id="events" className="relative py-24 px-6 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -293,14 +417,14 @@ export default function Home() {
             alt="Events Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gray-950/80"></div>
+          <div className="absolute inset-0 bg-gray-950/90"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1, ease: smoothCurve }}
             className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-4"
           >
@@ -319,9 +443,9 @@ export default function Home() {
                 key={i} 
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1, delay: index * 0.15, ease: smoothCurve }}
-                className="bg-gray-900/40 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex gap-4 hover:border-yellow-500/80 transition cursor-pointer hover:bg-gray-900/60 shadow-xl"
+                className="bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex gap-4 hover:border-yellow-500/80 transition cursor-pointer hover:bg-gray-900/80 shadow-xl"
               >
                 <div className="w-20 h-20 bg-yellow-500/20 border border-yellow-500/50 rounded-xl flex-shrink-0 flex items-center justify-center text-3xl">🗓️</div>
                 <div>
@@ -335,83 +459,86 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Essential International Resources (UPDATED W/ MODALS) */}
-      <section id="resources" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+      {/* 5. Highly Visual Navigating Resources (The Upgraded Version!) */}
+      <section id="resources" className="py-24 px-6 max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: smoothCurve }}
           className="text-center mb-16"
         >
-          <h3 className="text-4xl font-extrabold text-gray-950 tracking-tight mb-4">Navigating International Life</h3>
-          <p className="text-lg text-yellow-700 max-w-2xl mx-auto font-medium">Key resources and step-by-step guides open for all African students.</p>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">Navigating the US System</h3>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-medium">No fluff. Just the exact steps, official links, and visual blueprints you need as an F-1 international student.</p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {resourcesData.map((resource, index) => (
             <motion.div 
               key={resource.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 1, delay: index * 0.1, ease: smoothCurve }}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-6 hover:border-yellow-400 hover:shadow-md transition cursor-pointer"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: smoothCurve }}
+              className="bg-white rounded-[2rem] p-2 pr-2 shadow-sm border border-gray-100 hover:border-yellow-400 hover:shadow-xl transition-all cursor-pointer group flex flex-col sm:flex-row overflow-hidden"
               onClick={() => setActiveGuide(resource)}
             >
-              <span className="text-4xl">{resource.icon}</span>
-              <div>
-                <h4 className="text-xl font-bold text-gray-950 mb-2">{resource.title}</h4>
-                <p className="text-gray-700/80 mb-4 text-sm">{resource.shortDesc}</p>
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveGuide(resource);
-                  }}
-                  className="text-yellow-600 font-bold text-sm hover:underline flex items-center gap-1"
-                >
-                  Read Comprehensive Guide &rarr;
-                </button>
+              <div className="sm:w-2/5 h-48 sm:h-auto overflow-hidden rounded-3xl m-2 relative">
+                <img src={resource.image} alt={resource.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-transparent flex items-end p-4">
+                  <span className="text-4xl drop-shadow-md">{resource.icon}</span>
+                </div>
+              </div>
+              <div className="sm:w-3/5 p-6 flex flex-col justify-center">
+                <h4 className="text-2xl font-bold text-gray-950 mb-2 group-hover:text-yellow-600 transition">{resource.title}</h4>
+                <p className="text-gray-500 mb-6 text-sm leading-relaxed">{resource.shortDesc}</p>
+                <div className="mt-auto">
+                  <button className="bg-gray-50 border border-gray-200 text-gray-900 font-bold text-sm px-5 py-2.5 rounded-xl group-hover:bg-yellow-500 group-hover:border-yellow-500 group-hover:text-gray-950 transition w-full sm:w-auto">
+                    Start Process &rarr;
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Resource Modal Overlay */}
+      {/* Upgraded Detailed Guide Modal */}
       <AnimatePresence>
         {activeGuide && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-gray-950/40 backdrop-blur-sm flex items-center justify-center p-4 md:p-6"
+            className="fixed inset-0 z-[100] bg-gray-950/60 backdrop-blur-md flex items-center justify-center p-4 md:p-6"
             onClick={() => setActiveGuide(null)}
           >
             <motion.div 
-              initial={{ y: 50, opacity: 0, scale: 0.95 }}
+              initial={{ y: 100, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 20, opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: smoothCurve }}
-              className="bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] overflow-hidden flex flex-col shadow-2xl"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+              exit={{ y: 50, opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4, ease: smoothCurve }}
+              className="bg-white rounded-[2rem] w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
-              <div className="bg-gray-50 border-b border-gray-100 p-6 flex justify-between items-center sticky top-0 z-10">
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl">{activeGuide.icon}</span>
-                  <h3 className="text-2xl font-bold text-gray-950">{activeGuide.title}</h3>
+              {/* Modal Visual Header */}
+              <div className="relative h-48 md:h-64 flex-shrink-0">
+                <img src={activeGuide.image} alt="Header" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gray-950/50"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <span className="text-5xl mb-2">{activeGuide.icon}</span>
+                  <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">{activeGuide.title}</h3>
                 </div>
                 <button 
                   onClick={() => setActiveGuide(null)}
-                  className="text-gray-400 hover:text-gray-950 bg-gray-200/50 hover:bg-gray-200 rounded-full w-10 h-10 flex items-center justify-center transition"
+                  className="absolute top-6 right-6 bg-white/20 hover:bg-white text-white hover:text-gray-950 backdrop-blur-md rounded-full w-10 h-10 flex items-center justify-center transition shadow-lg"
                 >
                   ✕
                 </button>
               </div>
               
-              {/* Modal Body */}
-              <div className="p-6 md:p-8 overflow-y-auto">
+              {/* Modal Interactive Body */}
+              <div className="p-6 md:p-10 overflow-y-auto bg-white">
                 {activeGuide.content}
               </div>
             </motion.div>
@@ -419,13 +546,13 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* 6. Executive Board Section */}
-      <section id="board" className="py-24 px-6 bg-gray-50/50 border-t border-gray-100 overflow-hidden">
+      {/* 6. Executive Board Section (From original version) */}
+      <section id="board" className="py-24 px-6 bg-white border-t border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1, ease: smoothCurve }}
             className="text-center mb-16"
           >
@@ -442,9 +569,9 @@ export default function Home() {
                 key={`${member.role}-${index}`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1, delay: index * 0.08, ease: smoothCurve }}
-                className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all text-center group"
+                className="bg-gray-50 rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all text-center group"
               >
                 <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-yellow-500/30 group-hover:border-yellow-500 transition shadow-inner">
                   <img 
@@ -459,7 +586,7 @@ export default function Home() {
                 
                 <a 
                   href={`mailto:${member.email}`}
-                  className="inline-block bg-gray-100 hover:bg-yellow-500 hover:text-gray-950 text-gray-700 text-xs font-bold px-4 py-2 rounded-xl transition"
+                  className="inline-block bg-white hover:bg-yellow-500 hover:text-gray-950 text-gray-700 text-xs font-bold px-4 py-2 rounded-xl transition border border-gray-200 hover:border-yellow-500"
                 >
                   Contact
                 </a>
@@ -469,8 +596,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Footer */}
-      <footer className="border-t border-gray-200 bg-white px-6 py-12">
+      {/* 7. Footer (From original version) */}
+      <footer className="border-t border-gray-200 bg-gray-50 px-6 py-12">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-950 font-bold text-xl mb-4">Vassar Africans</p>
           <p className="text-sm text-gray-500 font-medium">A community for support, culture, and connections.</p>
