@@ -60,7 +60,7 @@ const boardMembers = [
   },
 ];
 
-// UPGRADED: Events Data with Google Calendar Links
+// Events Data with Google Calendar Links
 const eventsData = [
   {
     id: "welcome-dinner",
@@ -70,7 +70,6 @@ const eventsData = [
     time: "7:00 PM - 9:00 PM",
     location: "Matthew's Salon, College Center",
     description: "Kick off the semester with traditional cuisine, music, and an opportunity to meet new and returning members of the community.",
-    // Google Calendar template URL
     gcalLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Annual+African+Welcome+Dinner&dates=20240912T230000Z/20240913T010000Z&details=Kick+off+the+semester+with+traditional+cuisine,+music,+and+an+opportunity+to+meet+new+and+returning+members+of+the+community.&location=Matthew's+Salon,+Vassar+College"
   },
   {
@@ -81,7 +80,7 @@ const eventsData = [
     time: "5:30 PM - 7:30 PM",
     location: "Rocky 200 (Rockefeller Hall)",
     description: "Learn from Vassar African alumni about navigating OPT, H1-B sponsorships, and thriving in the US job market.",
-    gcalLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=International+Alumni+Career+Panel&dates=20241005T213000Z/20241005T233000Z&details=Learn+from+Vassar+African+alumni+about+navigating+OPT,+H1-B+sponsorships,+and+thriving+in+the+US+job+market.&location=Rockefeller+Hall,+Vassar+College"
+    gcalLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=International+Alumni+Career+Panel"
   },
   {
     id: "cultural-showcase",
@@ -95,7 +94,7 @@ const eventsData = [
   }
 ];
 
-// THREE PILLARS DATA (High-resolution images + rich descriptions)
+// THREE PILLARS DATA
 const pillarsData = [
   {
     icon: "🤝",
@@ -139,7 +138,6 @@ const resourcesData = [
         </div>
 
         <div className="relative border-l-2 border-gray-100 ml-4 space-y-8 pb-4">
-          {/* Step 1 */}
           <div className="relative pl-8">
             <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">1</div>
             <h4 className="font-bold text-gray-950 text-xl">Get Hired On-Campus</h4>
@@ -149,14 +147,12 @@ const resourcesData = [
             </a>
           </div>
 
-          {/* Step 2 */}
           <div className="relative pl-8">
             <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">2</div>
             <h4 className="font-bold text-gray-950 text-xl">Supervisor Letter</h4>
             <p className="text-sm text-gray-600 mt-1">Once hired, ask your manager to fill out the official "Employer Letter" on Vassar letterhead proving you actually have a job starting soon.</p>
           </div>
 
-          {/* Step 3 */}
           <div className="relative pl-8">
             <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">3</div>
             <h4 className="font-bold text-gray-950 text-xl">OIS Support Letter</h4>
@@ -166,7 +162,6 @@ const resourcesData = [
             </a>
           </div>
 
-          {/* Step 4 */}
           <div className="relative pl-8">
             <div className="absolute -left-[17px] top-1 bg-gray-950 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">4</div>
             <h4 className="font-bold text-gray-950 text-xl">Government Form (SS-5)</h4>
@@ -176,7 +171,6 @@ const resourcesData = [
             </a>
           </div>
 
-          {/* Step 5 */}
           <div className="relative pl-8">
             <div className="absolute -left-[17px] top-1 bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md ring-4 ring-white">5</div>
             <h4 className="font-bold text-gray-950 text-xl">Visit the Poughkeepsie SSA</h4>
@@ -204,7 +198,6 @@ const resourcesData = [
         </p>
         
         <div className="grid md:grid-cols-2 gap-6">
-          {/* CPT Card */}
           <div className="bg-white rounded-2xl border-2 border-yellow-200 overflow-hidden shadow-sm hover:shadow-md transition">
             <div className="bg-yellow-100 px-5 py-3 border-b border-yellow-200 flex justify-between items-center">
               <h4 className="font-bold text-yellow-900 text-lg">CPT</h4>
@@ -224,7 +217,6 @@ const resourcesData = [
             </div>
           </div>
 
-          {/* OPT Card */}
           <div className="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-sm hover:shadow-md transition">
             <div className="bg-blue-100 px-5 py-3 border-b border-blue-200 flex justify-between items-center">
               <h4 className="font-bold text-blue-900 text-lg">OPT</h4>
@@ -255,7 +247,6 @@ const resourcesData = [
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop",
     content: (
       <div className="space-y-8">
-        {/* Phone Network */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl bg-gray-50 p-2 rounded-xl">📱</span>
@@ -282,7 +273,6 @@ const resourcesData = [
           </div>
         </div>
 
-        {/* Banking */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl bg-gray-50 p-2 rounded-xl">🏦</span>
@@ -301,7 +291,6 @@ const resourcesData = [
           </div>
         </div>
 
-        {/* Housing */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl bg-gray-50 p-2 rounded-xl">🔑</span>
@@ -327,7 +316,6 @@ const resourcesData = [
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop",
     content: (
       <div className="space-y-6">
-        {/* Step 1 */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-yellow-300 transition group">
           <h4 className="font-bold text-gray-950 text-xl mb-2 flex items-center gap-2">
             <span className="bg-gray-100 text-gray-500 text-sm px-2 py-1 rounded-md">Step 1</span> On-Campus First
@@ -338,7 +326,6 @@ const resourcesData = [
           </a>
         </div>
 
-        {/* Step 2 */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-300 transition group">
           <h4 className="font-bold text-gray-950 text-xl mb-2 flex items-center gap-2">
             <span className="bg-gray-100 text-gray-500 text-sm px-2 py-1 rounded-md">Step 2</span> Get Your Insurance Card
@@ -349,7 +336,6 @@ const resourcesData = [
           </a>
         </div>
 
-        {/* Step 3 */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-yellow-300 transition group">
           <h4 className="font-bold text-gray-950 text-xl mb-2 flex items-center gap-2">
             <span className="bg-gray-100 text-gray-500 text-sm px-2 py-1 rounded-md">Step 3</span> Find "In-Network" Doctors
@@ -460,22 +446,17 @@ export default function Home() {
               transition={{ duration: 1, delay: index * 0.15, ease: smoothCurve }}
               className="group relative h-[480px] rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-end border border-gray-200/80"
             >
-              {/* High-Res Background Image */}
               <img 
                 src={pillar.image} 
                 alt={pillar.title} 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" 
               />
-              
-              {/* Gradient Overlay for Readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
 
-              {/* Glassmorphic Badge */}
               <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-md border border-white/30 text-white w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg">
                 {pillar.icon}
               </div>
 
-              {/* Card Content */}
               <div className="relative z-10 p-8 flex flex-col justify-end">
                 <span className="text-yellow-400 font-semibold text-xs uppercase tracking-widest mb-1">{pillar.tagline}</span>
                 <h4 className="text-2xl font-bold text-white mb-3 leading-snug">{pillar.title}</h4>
@@ -488,14 +469,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. UPGRADED: Events Spotlight with Calendar Links */}
+      {/* 4. Events Spotlight with Calendar Links */}
       <section id="events" className="relative py-24 px-6 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
+          
+          {/* UPDATED BACKGROUND IMAGE HERE */}
           <img 
-            src="https://imgs.search.brave.com/XNKwMTFoEWz-JRtKKJAukqtkKJKGqfjCQsbcPgSSxU8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvNjE5/MjQ2My9wZXhlbHMt/cGhvdG8tNjE5MjQ2/My5qcGVnP2NzPXRp/bnlzcmdiJmRwcj0x/Jnc9NTAw" 
+            src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop" 
             alt="Events Background" 
             className="w-full h-full object-cover"
           />
+
           <div className="absolute inset-0 bg-gray-950/90 backdrop-blur-sm"></div>
         </div>
 
@@ -521,13 +505,11 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: index * 0.15, ease: smoothCurve }}
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 hover:bg-white/10 transition-all flex flex-col md:flex-row gap-6 items-start md:items-center group shadow-2xl"
               >
-                {/* Visual Date Badge */}
                 <div className="bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-2xl p-4 flex flex-col items-center justify-center min-w-[90px] shadow-lg border border-yellow-300/30">
                   <span className="text-yellow-950 text-sm font-bold uppercase tracking-widest">{event.month}</span>
                   <span className="text-yellow-950 text-4xl font-black">{event.day}</span>
                 </div>
                 
-                {/* Event Details */}
                 <div className="flex-1">
                   <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">{event.title}</h4>
                   
@@ -545,7 +527,6 @@ export default function Home() {
                   <p className="text-gray-400 text-sm leading-relaxed">{event.description}</p>
                 </div>
 
-                {/* Add to Google Calendar CTA */}
                 <a 
                   href={event.gcalLink} 
                   target="_blank" 
@@ -623,7 +604,6 @@ export default function Home() {
               className="bg-white rounded-[2rem] w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Visual Header */}
               <div className="relative h-48 md:h-64 flex-shrink-0">
                 <img src={activeGuide.image} alt="Header" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gray-950/50"></div>
@@ -639,7 +619,6 @@ export default function Home() {
                 </button>
               </div>
               
-              {/* Modal Interactive Body */}
               <div className="p-6 md:p-10 overflow-y-auto bg-white">
                 {activeGuide.content}
               </div>
