@@ -60,6 +60,31 @@ const boardMembers = [
   },
 ];
 
+// THREE PILLARS DATA (High-resolution images + rich descriptions)
+const pillarsData = [
+  {
+    icon: "🤝",
+    title: "Community & Belonging",
+    tagline: "A safe haven away from home",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2000&auto=format&fit=crop",
+    desc: "Transitioning to life at Vassar can feel overwhelming. We cultivate an inclusive, family-like environment where students share experiences, build lifelong friendships, and navigate campus life together.",
+  },
+  {
+    icon: "🌍",
+    title: "Cultural Pride & Heritage",
+    tagline: "Celebrating the richness of Africa",
+    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2000&auto=format&fit=crop",
+    desc: "From traditional dinners and vibrant music showcases to critical discussions on continental affairs, we elevate African voices and share the incredible diversity of our roots with the broader Vassar community.",
+  },
+  {
+    icon: "🎓",
+    title: "Academic & Professional Excellence",
+    tagline: "Empowering future global leaders",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop",
+    desc: "We foster continuous growth by providing peer mentorship, career guidance, internship resources, and networking opportunities tailored to helping international and African students excel.",
+  },
+];
+
 // HIGHLY VISUAL & INTERACTIVE GUIDES DATA
 const resourcesData = [
   {
@@ -309,7 +334,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50/50">
-      {/* 1. Navigation Bar (From original version, but smoothed out) */}
+      {/* 1. Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
@@ -334,7 +359,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 2. Golden African Background Hero Section (From original version) */}
+      {/* 2. Golden African Background Hero Section */}
       <header className="relative pt-32 pb-24 md:pt-48 md:pb-36 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -374,7 +399,7 @@ export default function Home() {
         </motion.div>
       </header>
 
-      {/* 3. About Section (From original version) */}
+      {/* 3. UPGRADED: High-Level Visual Pillars Section */}
       <section id="about" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -383,33 +408,52 @@ export default function Home() {
           transition={{ duration: 1, ease: smoothCurve }}
           className="text-center mb-16"
         >
-          <h3 className="text-4xl font-extrabold text-gray-950 tracking-tight mb-4">Our Three Pillars</h3>
-          <p className="text-lg text-yellow-700 max-w-2xl mx-auto font-medium">We are dedicated to supporting the whole student experience.</p>
+          <span className="text-yellow-600 text-sm font-bold tracking-wider uppercase mb-2 block">Our Identity</span>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight mb-4">Our Three Pillars</h3>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+            The foundational core driving our mission to uplift, empower, and celebrate African students at Vassar.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {[
-            { icon: "🤝", title: "Community", desc: "Forging lifelong connections and a strong support network." },
-            { icon: "🌍", title: "Culture", desc: "Celebrating the diverse cultures of the African continent." },
-            { icon: "🎓", title: "Excellence", desc: "Providing academic guidance and professional development." },
-          ].map((pillar, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {pillarsData.map((pillar, index) => (
             <motion.div 
               key={pillar.title} 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, delay: index * 0.15, ease: smoothCurve }}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)] transition hover:border-yellow-200"
+              className="group relative h-[480px] rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-end border border-gray-200/80"
             >
-              <span className="text-6xl mb-6 block">{pillar.icon}</span>
-              <h4 className="text-2xl font-bold text-gray-950 mb-3">{pillar.title}</h4>
-              <p className="text-gray-700/80">{pillar.desc}</p>
+              {/* High-Res Background Image */}
+              <img 
+                src={pillar.image} 
+                alt={pillar.title} 
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" 
+              />
+              
+              {/* Gradient Overlay for Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+
+              {/* Glassmorphic Badge */}
+              <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-md border border-white/30 text-white w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                {pillar.icon}
+              </div>
+
+              {/* Card Content */}
+              <div className="relative z-10 p-8 flex flex-col justify-end">
+                <span className="text-yellow-400 font-semibold text-xs uppercase tracking-widest mb-1">{pillar.tagline}</span>
+                <h4 className="text-2xl font-bold text-white mb-3 leading-snug">{pillar.title}</h4>
+                <p className="text-gray-300 text-sm leading-relaxed font-normal">
+                  {pillar.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* 4. Events Spotlight (From original version) */}
+      {/* 4. Events Spotlight */}
       <section id="events" className="relative py-24 px-6 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -459,7 +503,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Highly Visual Navigating Resources (The Upgraded Version!) */}
+      {/* 5. Navigating Resources */}
       <section id="resources" className="py-24 px-6 max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -503,7 +547,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Upgraded Detailed Guide Modal */}
+      {/* Detailed Guide Modal */}
       <AnimatePresence>
         {activeGuide && (
           <motion.div 
@@ -546,7 +590,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* 6. Executive Board Section (From original version) */}
+      {/* 6. Executive Board Section */}
       <section id="board" className="py-24 px-6 bg-white border-t border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -596,7 +640,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Footer (From original version) */}
+      {/* 7. Footer */}
       <footer className="border-t border-gray-200 bg-gray-50 px-6 py-12">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-950 font-bold text-xl mb-4">Vassar Africans</p>
