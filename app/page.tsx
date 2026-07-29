@@ -60,6 +60,41 @@ const boardMembers = [
   },
 ];
 
+// UPGRADED: Events Data with Google Calendar Links
+const eventsData = [
+  {
+    id: "welcome-dinner",
+    title: "Annual African Welcome Dinner",
+    month: "SEP",
+    day: "12",
+    time: "7:00 PM - 9:00 PM",
+    location: "Matthew's Salon, College Center",
+    description: "Kick off the semester with traditional cuisine, music, and an opportunity to meet new and returning members of the community.",
+    // Google Calendar template URL
+    gcalLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Annual+African+Welcome+Dinner&dates=20240912T230000Z/20240913T010000Z&details=Kick+off+the+semester+with+traditional+cuisine,+music,+and+an+opportunity+to+meet+new+and+returning+members+of+the+community.&location=Matthew's+Salon,+Vassar+College"
+  },
+  {
+    id: "career-panel",
+    title: "International Alumni Career Panel",
+    month: "OCT",
+    day: "05",
+    time: "5:30 PM - 7:30 PM",
+    location: "Rocky 200 (Rockefeller Hall)",
+    description: "Learn from Vassar African alumni about navigating OPT, H1-B sponsorships, and thriving in the US job market.",
+    gcalLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=International+Alumni+Career+Panel&dates=20241005T213000Z/20241005T233000Z&details=Learn+from+Vassar+African+alumni+about+navigating+OPT,+H1-B+sponsorships,+and+thriving+in+the+US+job+market.&location=Rockefeller+Hall,+Vassar+College"
+  },
+  {
+    id: "cultural-showcase",
+    title: "Pan-African Cultural Showcase",
+    month: "NOV",
+    day: "18",
+    time: "8:00 PM - 10:30 PM",
+    location: "UpCDC (Students' Building)",
+    description: "Our biggest event of the year! Join us for a night of vibrant fashion, dance performances, spoken word, and celebration.",
+    gcalLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pan-African+Cultural+Showcase&dates=20241119T010000Z/20241119T033000Z&details=Our+biggest+event+of+the+year!+Join+us+for+a+night+of+vibrant+fashion,+dance+performances,+spoken+word,+and+celebration.&location=Students'+Building,+Vassar+College"
+  }
+];
+
 // THREE PILLARS DATA (High-resolution images + rich descriptions)
 const pillarsData = [
   {
@@ -399,7 +434,7 @@ export default function Home() {
         </motion.div>
       </header>
 
-      {/* 3. UPGRADED: High-Level Visual Pillars Section */}
+      {/* 3. High-Level Visual Pillars Section */}
       <section id="about" className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -453,7 +488,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Events Spotlight */}
+      {/* 4. UPGRADED: Events Spotlight with Calendar Links */}
       <section id="events" className="relative py-24 px-6 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -461,42 +496,65 @@ export default function Home() {
             alt="Events Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gray-950/90"></div>
+          <div className="absolute inset-0 bg-gray-950/90 backdrop-blur-sm"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10 max-w-4xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1, ease: smoothCurve }}
-            className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-4"
+            className="text-center mb-16"
           >
-            <div>
-              <h3 className="text-4xl font-extrabold tracking-tight">Featured Events</h3>
-              <p className="text-yellow-500/80 mt-2 font-medium">Mark your calendar for our upcoming meetings and cultural activities.</p>
-            </div>
-            <a href="#events" className="bg-yellow-500 text-gray-950 px-6 py-2.5 rounded-xl font-bold hover:bg-yellow-400 transition whitespace-nowrap text-center">
-              View All Events
-            </a>
+            <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Featured Events</h3>
+            <p className="text-yellow-500/90 text-lg font-medium">Mark your calendar and join our vibrant community gatherings.</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i, index) => (
+          <div className="space-y-6">
+            {eventsData.map((event, index) => (
               <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={event.id} 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 1, delay: index * 0.15, ease: smoothCurve }}
-                className="bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex gap-4 hover:border-yellow-500/80 transition cursor-pointer hover:bg-gray-900/80 shadow-xl"
+                transition={{ duration: 0.8, delay: index * 0.15, ease: smoothCurve }}
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 hover:bg-white/10 transition-all flex flex-col md:flex-row gap-6 items-start md:items-center group shadow-2xl"
               >
-                <div className="w-20 h-20 bg-yellow-500/20 border border-yellow-500/50 rounded-xl flex-shrink-0 flex items-center justify-center text-3xl">🗓️</div>
-                <div>
-                  <h4 className="text-lg font-bold text-white">African Welcome Dinner {i}</h4>
-                  <p className="text-yellow-400/90 text-sm font-medium">Saturday, Sept. 12 at 7:00 PM</p>
-                  <p className="text-gray-300 text-xs mt-1">Matthew's Salon, College Center</p>
+                {/* Visual Date Badge */}
+                <div className="bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-2xl p-4 flex flex-col items-center justify-center min-w-[90px] shadow-lg border border-yellow-300/30">
+                  <span className="text-yellow-950 text-sm font-bold uppercase tracking-widest">{event.month}</span>
+                  <span className="text-yellow-950 text-4xl font-black">{event.day}</span>
                 </div>
+                
+                {/* Event Details */}
+                <div className="flex-1">
+                  <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">{event.title}</h4>
+                  
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-300 mb-3 font-medium">
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      {event.time}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                      {event.location}
+                    </span>
+                  </div>
+                  
+                  <p className="text-gray-400 text-sm leading-relaxed">{event.description}</p>
+                </div>
+
+                {/* Add to Google Calendar CTA */}
+                <a 
+                  href={event.gcalLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full md:w-auto mt-4 md:mt-0 text-center bg-white/10 hover:bg-yellow-500 hover:text-gray-950 text-white border border-white/20 hover:border-yellow-500 font-bold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 flex-shrink-0"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  Add to Calendar
+                </a>
               </motion.div>
             ))}
           </div>
