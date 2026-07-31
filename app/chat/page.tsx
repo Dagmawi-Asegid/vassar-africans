@@ -675,7 +675,7 @@ export default function ChatPage() {
               <div className="bg-gray-900/80 border border-gray-800 p-5 rounded-2xl space-y-2">
                 <span className="text-2xl block">🏰</span>
                 <h3 className="font-bold text-yellow-500 text-base">Residential Houses Overview</h3>
-                <p className="text-xs text-gray-300">Explore Main, Cushing, Davison, Jewett, Lathrop, Josselyn, Strong, and Raymond houses.</p>
+                <p className="text-xs text-gray-300">Explore Main, Cushing, Davison, Jewett, Lathrop, Josselyn, Strong, Ferry house, Town houses, Terrace Apartments, South commons and Raymond houses.</p>
                 <a href="https://offices.vassar.edu/residential-life/" target="_blank" rel="noopener noreferrer" className="inline-block text-xs text-yellow-400 underline pt-2">
                   View ResLife Housing Guide &rarr;
                 </a>
@@ -698,7 +698,7 @@ export default function ChatPage() {
       {isEditModalOpen && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-2xl w-full max-w-md shadow-2xl">
-            <h3 className="text-xl font-bold text-white mb-1">Edit Profile</h3>
+            <h3 className="text-xl font-bold text-white mb-1">Edit Your Profile</h3>
             <p className="text-gray-400 text-xs mb-4">Update your display name and major.</p>
 
             <form onSubmit={handleSaveProfile} className="space-y-4">
