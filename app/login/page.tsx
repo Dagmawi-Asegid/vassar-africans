@@ -51,7 +51,7 @@ export default function LoginPage() {
             alt="Logo" 
             className="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-yellow-500 object-cover"
           />
-          <h2 className="text-3xl font-bold text-white">Welcome Back</h2>
+          <h2 className="text-3xl font-bold text-white">Welcome</h2>
           <p className="text-gray-400 text-sm mt-2">Log in to reconnect with the community.</p>
         </div>
 
