@@ -10,7 +10,7 @@ const smoothCurve = [0.22, 1, 0.36, 1];
 // Executive Board Members Data
 const boardMembers = [
   {
-    name: "Dagmawi DestaAsegid",
+    name: "Dagmawi Desta Asegid",
     role: "President",
     major: "Computer Science '29",
     image: "https://github.com/Dagmawi-Asegid.png",
@@ -401,9 +401,9 @@ export default function Home() {
             Vassar College African Students Association
           </span>
           <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tighter leading-tight drop-shadow-md">
-            Building Community. <br />
+            Building Community <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-500">
-              Celebrating Culture.
+              Celebrating Culture
             </span>
           </h2>
           <p className="text-xl text-gray-200 max-w-3xl mb-12 drop-shadow-sm font-medium">
