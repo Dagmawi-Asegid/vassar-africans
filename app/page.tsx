@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Professional "Apple-like" animation curve
-const smoothCurve = [0.22, 1, 0.36, 1];
+const smoothCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 // Executive Board Members Data
 const boardMembers = [
