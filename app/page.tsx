@@ -359,11 +359,6 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
-            <img 
-              src="https://imgs.search.brave.com/423e6QATJnNt0I4cjbiQGpbHP0sywyFgpXAWXgLCcF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjUv/MzA3LzgyMy9zbWFs/bC9mYXNoaW9uLW1v/ZGVsLXdlYXJpbmct/Y29sb3JmdWwtaGVh/ZGRyZXNzLXBvc2lu/Zy1pbi1mcm9udC1v/Zi1zYXZhbm5hLWxh/bmRzY2FwZS1waG90/by5qcGc" 
-              alt="Vassar Africans Logo" 
-              className="rounded-full w-10 h-10 object-cover border-2 border-yellow-500 shadow-sm" 
-            />
             <h1 className="text-2xl font-bold text-gray-950">Vassar Africans</h1>
           </Link>
           <div className="hidden md:flex space-x-8 items-center">

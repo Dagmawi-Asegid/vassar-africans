@@ -229,14 +229,9 @@ export default function ChatPage() {
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
       `}>
         <div className="p-4 overflow-y-auto space-y-6">
-          {/* Logo Header */}
+          {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img 
-                src="https://imgs.search.brave.com/423e6QATJnNt0I4cjbiQGpbHP0sywyFgpXAWXgLCcF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjUv/MzA3LzgyMy9zbWFs/bC9mYXNoaW9uLW1v/ZGVsLXdlYXJpbmct/Y29sb3JmdWwtaGVh/ZGRyZXNzLXBvc2lu/Zy1pbi1mcm9udC1v/Zi1zYXZhbm5hLWxh/bmRzY2FwZS1waG90/by5qcGc" 
-                alt="Logo" 
-                className="w-8 h-8 rounded-full border border-yellow-500 object-cover"
-              />
               <span className="font-bold text-lg text-white">Vassar Africans</span>
             </div>
             <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-gray-400 hover:text-white">✕</button>
