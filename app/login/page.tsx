@@ -46,6 +46,11 @@ export default function LoginPage() {
         className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-2xl relative z-10"
       >
         <div className="text-center mb-8">
+          <img 
+            src="https://imgs.search.brave.com/423e6QATJnNt0I4cjbiQGpbHP0sywyFgpXAWXgLCcF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjUv/MzA3LzgyMy9zbWFs/bC9mYXNoaW9uLW1v/ZGVsLXdlYXJpbmct/Y29sb3JmdWwtaGVh/ZGRyZXNzLXBvc2lu/Zy1pbi1mcm9udC1v/Zi1zYXZhbm5hLWxh/bmRzY2FwZS1waG90/by5qcGc" 
+            alt="Logo" 
+            className="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-yellow-500 object-cover"
+          />
           <h2 className="text-3xl font-bold text-white">Welcome</h2>
           <p className="text-gray-400 text-sm mt-2">Log in to reconnect with the community.</p>
         </div>
