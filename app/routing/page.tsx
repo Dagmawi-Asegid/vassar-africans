@@ -7,10 +7,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800/60 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3 group">
-            <img 
-              src="https://imgs.search.brave.com/423e6QATJnNt0I4cjbiQGpbHP0sywyFgpXAWXgLCcF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjUv/MzA3LzgyMy9zbWFs/bC9mYXNoaW9uLW1v/ZGVsLXdlYXJpbmct/Y29sb3JmdWwtaGVh/ZGRyZXNzLXBvc2lu/Zy1pbi1mcm9udC1v/Zi1zYXZhbm5hLWxh/bmRzY2FwZS1waG90/by5qcGc" 
-              alt="Logo" 
-              className="w-10 h-10 rounded-full border border-yellow-500/50 object-cover group-hover:scale-105 transition-transform"
+            <img
+              src="/logo.svg"
+              alt="Vassar Africans Logo"
+              className="w-10 h-10 rounded-full border border-yellow-500/50 group-hover:scale-105 transition-transform"
             />
             <span className="font-extrabold text-xl tracking-tight text-white">Vassar Africans</span>
           </Link>
