@@ -2,12 +2,50 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sparkles } from "@react-three/drei";
+import { Float, Image as DreiImage, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 
 const GOLD = "#eab308";
-const AMBER = "#f59e0b";
-const HONEY = "#fbbf24";
+
+// Same photos used in the "Our Three Pillars" section, reused here so the
+// hero/auth backdrops stay visually consistent with the rest of the site.
+const CULTURE_PHOTOS = [
+  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+];
+
+function PhotoCard({
+  url,
+  position,
+  rotation = [0, 0, 0],
+  size = [2, 2.4],
+  floatSpeed = 1.2,
+}: {
+  url: string;
+  position: [number, number, number];
+  rotation?: [number, number, number];
+  size?: [number, number];
+  floatSpeed?: number;
+}) {
+  return (
+    <Float speed={floatSpeed} rotationIntensity={0.5} floatIntensity={1.6}>
+      <group position={position} rotation={rotation}>
+        <mesh position={[0, 0, -0.03]}>
+          <planeGeometry args={[size[0] + 0.18, size[1] + 0.18]} />
+          <meshStandardMaterial
+            color={GOLD}
+            metalness={0.5}
+            roughness={0.3}
+            emissive={GOLD}
+            emissiveIntensity={0.15}
+          />
+        </mesh>
+        <DreiImage url={url} scale={size} radius={0.08} transparent />
+      </group>
+    </Float>
+  );
+}
 
 function FloatingCluster({ variant }: { variant: "hero" | "auth" }) {
   const group = useRef<THREE.Group>(null);
@@ -15,46 +53,38 @@ function FloatingCluster({ variant }: { variant: "hero" | "auth" }) {
   useFrame((state) => {
     if (!group.current) return;
     const { x, y } = state.pointer;
-    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, x * 0.4, 0.03);
-    group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -y * 0.2, 0.03);
+    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, x * 0.3, 0.03);
+    group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -y * 0.15, 0.03);
   });
+
+  const photos = variant === "hero" ? CULTURE_PHOTOS : CULTURE_PHOTOS.slice(0, 2);
 
   return (
     <group ref={group}>
-      <Float speed={1.4} rotationIntensity={1.1} floatIntensity={1.8}>
-        <mesh position={[-2.4, 0.6, 0]}>
-          <icosahedronGeometry args={[1.1, 0]} />
-          <meshStandardMaterial color={GOLD} metalness={0.6} roughness={0.25} flatShading />
-        </mesh>
-      </Float>
-
-      <Float speed={1.1} rotationIntensity={1.4} floatIntensity={2.2}>
-        <mesh position={[2.2, -0.4, -1]}>
-          <torusKnotGeometry args={[0.8, 0.26, 128, 32]} />
-          <meshStandardMaterial color={AMBER} metalness={0.4} roughness={0.3} />
-        </mesh>
-      </Float>
-
-      <Float speed={1.8} rotationIntensity={0.8} floatIntensity={1.4}>
-        <mesh position={[0.3, 1.6, -2]}>
-          <octahedronGeometry args={[0.7, 0]} />
-          <meshStandardMaterial color={HONEY} metalness={0.5} roughness={0.2} flatShading />
-        </mesh>
-      </Float>
-
-      {variant === "hero" && (
-        <Float speed={0.8} rotationIntensity={0.5} floatIntensity={1}>
-          <mesh position={[-1, -1.6, -1.5]} rotation={[0.4, 0.2, 0]}>
-            <torusGeometry args={[1.4, 0.04, 16, 100]} />
-            <meshStandardMaterial
-              color={GOLD}
-              emissive={GOLD}
-              emissiveIntensity={0.3}
-              metalness={0.7}
-              roughness={0.2}
-            />
-          </mesh>
-        </Float>
+      <PhotoCard
+        url={photos[0]}
+        position={[-2.6, 0.4, -0.5]}
+        rotation={[0, 0.25, -0.08]}
+        size={[2.1, 2.6]}
+        floatSpeed={1.1}
+      />
+      {photos[1] && (
+        <PhotoCard
+          url={photos[1]}
+          position={[2.5, -0.5, -1.2]}
+          rotation={[0, -0.3, 0.06]}
+          size={[2, 2.5]}
+          floatSpeed={1.4}
+        />
+      )}
+      {photos[2] && (
+        <PhotoCard
+          url={photos[2]}
+          position={[0.2, 1.9, -2.4]}
+          rotation={[0, 0.1, -0.04]}
+          size={[1.6, 2]}
+          floatSpeed={0.9}
+        />
       )}
 
       <Sparkles
@@ -83,9 +113,9 @@ export default function Scene3D({
         gl={{ antialias: true, alpha: true }}
         camera={{ position: [0, 0, 7], fov: 45 }}
       >
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} intensity={1.2} color="#fde68a" />
-        <pointLight position={[-5, -3, -5]} intensity={0.6} color="#f59e0b" />
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[5, 5, 5]} intensity={1.1} color="#fde68a" />
+        <pointLight position={[-5, -3, -5]} intensity={0.5} color="#f59e0b" />
         <Suspense fallback={null}>
           <FloatingCluster variant={variant} />
         </Suspense>
