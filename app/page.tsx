@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-
-const Scene3D = dynamic(() => import("./components/Scene3D"), { ssr: false });
 
 // Professional "Apple-like" animation curve
 const smoothCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -383,15 +380,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 2. 3D Motion Hero Section */}
-      <header className="relative pt-32 pb-24 md:pt-48 md:pb-36 px-6 overflow-hidden bg-gray-950">
+      {/* 2. Golden African Background Hero Section */}
+      <header className="relative pt-32 pb-24 md:pt-48 md:pb-36 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-950 to-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(234,179,8,0.18),transparent_60%)]" />
-          <Scene3D variant="hero" />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/30 to-transparent" />
+          <img 
+            src="https://imgs.search.brave.com/uyzDWSjOmywYSsjGEl7iJcDYwrferM7Vy17GDEYsXII/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE4Lzc1Lzk3LzQ3/LzM2MF9GXzE4NzU5/NzQ3NzZfSjRtMVdX/R2FYSjl0Wnd4bVdm/WndlMWtCeENZUjVY/RFcuanBn" 
+            alt="African Culture Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gray-950/60"></div>
         </div>
-
+        
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
