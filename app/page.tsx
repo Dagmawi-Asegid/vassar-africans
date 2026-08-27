@@ -360,7 +360,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
             <img 
-              src="https://imgs.search.brave.com/423e6QATJnNt0I4cjbiQGpbHP0sywyFgpXAWXgLCcF4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjUv/MzA3LzgyMy9zbWFs/bC9mYXNoaW9uLW1v/ZGVsLXdlYXJpbmct/Y29sb3JmdWwtaGVh/ZGRyZXNzLXBvc2lu/Zy1pbi1mcm9udC1v/Zi1zYXZhbm5hLWxh/bmRzY2FwZS1waG90/by5qcGc" 
+              src="/logo.svg" 
               alt="Vassar Africans Logo" 
               className="rounded-full w-10 h-10 object-cover border-2 border-yellow-500 shadow-sm" 
             />
@@ -383,9 +383,9 @@ export default function Home() {
       {/* 2. Golden African Background Hero Section */}
       <header className="relative pt-32 pb-24 md:pt-48 md:pb-36 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://imgs.search.brave.com/uyzDWSjOmywYSsjGEl7iJcDYwrferM7Vy17GDEYsXII/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE4Lzc1Lzk3LzQ3/LzM2MF9GXzE4NzU5/NzQ3NzZfSjRtMVdX/R2FYSjl0Wnd4bVdm/WndlMWtCeENZUjVY/RFcuanBn" 
-            alt="African Culture Background" 
+          <img
+            src="https://imgs.search.brave.com/uyzDWSjOmywYSsjGEl7iJcDYwrferM7Vy17GDEYsXII/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE4Lzc1Lzk3LzQ3/LzM2MF9GXzE4NzU5/NzQ3NzZfSjRtMVdX/R2FYSjl0Wnd4bVdm/WndlMWtCeENZUjVY/RFcuanBn"
+            alt="African Culture Background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gray-950/60"></div>

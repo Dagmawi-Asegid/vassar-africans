@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Vassar Africans logo">
+  <circle cx="256" cy="256" r="256" fill="#0B0B0F"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="#FFDD00" stroke-width="12"/>
+  <path fill="#FFDD00" d="M150 100 L250 78 L322 96 L340 150 L372 210 L400 244 L462 262 L392 300 L368 340 L356 386 L348 430 L312 486 L280 496 L250 440 L236 388 L216 340 L210 322 L168 322 L128 300 L92 236 L110 176 L128 132 Z"/>
+</svg>
