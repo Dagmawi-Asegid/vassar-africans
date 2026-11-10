@@ -357,23 +357,23 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50/50">
       {/* 1. Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <img 
-              src="/logo.svg" 
-              alt="Vassar Africans Logo" 
-              className="rounded-full w-10 h-10 object-cover border-2 border-yellow-500 shadow-sm" 
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 min-w-0">
+            <img
+              src="/logo.svg"
+              alt="Vassar Africans Logo"
+              className="rounded-full w-10 h-10 shrink-0 object-cover border-2 border-yellow-500 shadow-sm"
             />
-            <h1 className="text-2xl font-bold text-gray-950">Vassar Africans</h1>
+            <h1 className="text-lg md:text-2xl font-bold text-gray-950 truncate">Vassar Africans</h1>
           </Link>
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="flex md:space-x-8 items-center">
             {['About', 'Resources', 'Events', 'Board'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="text-sm text-gray-700 hover:text-yellow-600 font-bold transition">
+              <a key={item} href={`#${item.toLowerCase()}`} className="hidden md:inline text-sm text-gray-700 hover:text-yellow-600 font-bold transition">
                 {item}
               </a>
             ))}
-            
-            <Link href="/login" className="bg-gray-950 text-white px-5 py-2 rounded-xl text-sm font-semibold hover:bg-yellow-500 hover:text-gray-950 hover:border-yellow-500 transition shadow-sm border border-gray-800">
+
+            <Link href="/login" className="bg-gray-950 text-white px-4 py-2 md:px-5 rounded-xl text-sm font-semibold whitespace-nowrap hover:bg-yellow-500 hover:text-gray-950 hover:border-yellow-500 transition shadow-sm border border-gray-800">
               Student Login
             </Link>
           </div>
